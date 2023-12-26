@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Processor</title>
+</head>
+<body>
+
+    <h1>PDF Processor</h1>
+
+    <input type="file" id="pdfInput" accept=".pdf">
+    <button onclick="processPDF()">Process PDF</button>
+
+    <div id="result">
+        <!-- Display the result here -->
+    </div>
+
+    <script>
+        function processPDF() {
+            const input = document.getElementById('pdfInput');
+            const file = input.files[0];
+
+            if (file) {
+                // Use FormData to send the file to the server
+                const formData = new FormData();
+                formData.append('pdfFile', file);
+
+                // Make a POST request to the server
+                fetch('/process-pdf', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the result on the page
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = `<p>${data.message}</p>`;
+
+                    // If the process was successful, display a link to download the generated PDF
+                    if (data.success) {
+                        resultDiv.innerHTML += `<p><a href="${data.generatedPdf}" download>Download Generated PDF</a></p>`;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+
+</body>
+</html>
