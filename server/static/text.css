@@ -1,0 +1,19 @@
+.title {
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 3em;
+    color: #cc0000; /* Red color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.resultMsg {
+    font-weight: bold;
+    font-family: system-ui;
+    font-size: 45px;
+    margin-top: 20px;
+    padding: 10px;
+    color: #cf3030;
+    text-align: center;
+}

@@ -9,8 +9,11 @@
 
     <h1>PDF Processor</h1>
 
+  <!-- Add these elements to your existing HTML structure -->
     <input type="file" id="pdfInput" accept=".pdf">
-    <button onclick="processPDF()">Process PDF</button>
+    <button onclick="uploadPDF()">Upload PDF</button>
+    <button onclick="downloadZIP()" disabled>Download ZIP</button>
+
 
     <div id="result">
         <!-- Display the result here -->
@@ -27,7 +30,7 @@
                 formData.append('pdfFile', file);
 
                 // Make a POST request to the server
-                fetch('/process-pdf', {
+                fetch('/', {
                     method: 'POST',
                     body: formData
                 })

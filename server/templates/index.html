@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Blender</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='loader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='text.css') }}">
+</head>
+<body>
+
+  <h1 class="title">PDF Blender</h1>
+
+    <div class="upload-section">
+       <div class="file-upload-container">
+            <input type="file" id="pdfInput" class="file-input" accept=".pdf" multiple>
+            <label for="pdfInput" class="file-label button">Choose File</label>
+        </div>
+        <button onclick="uploadPDF()" id="uploadBtn" class="button uploadBtn">Upload PDF(s)</button>
+    </div>
+
+    <div class="upload-section">
+    <button onclick="downloadZIP()" id="downloadBtn" class="button downloadBtn" hidden>Download ZIP</button>
+    </div>
+
+    <div id="result" class="resultMsg" content="">
+    </div>
+
+  <div id="loader"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
