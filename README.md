@@ -7,9 +7,8 @@ first, clone the project
 after clonning, navigate to project dir
 **cd /path/to/TestsShuffler**
 
-then, you should create and activate a virtual env (if there isn't already one)
-**python -m venv venv**  
-**venv\Scripts\activate**
+then, activate the setup.py file
+**pip install .**
 
-lastly, you should install all packages using requirements.txt
-**pip install -r requirements.txt**
+lastly, run the server
+**python server/server.py**
