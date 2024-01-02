@@ -13,3 +13,9 @@ __pycache__/
 *.sqlite3
 *.log
 venv/
+.idea/
+
+# Build artifacts
+build/
+dist/
+TestsShuffler.egg-info/
