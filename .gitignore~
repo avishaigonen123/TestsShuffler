@@ -1,0 +1,4 @@
+#ignore all files within pdf directiories
+pdf/
+
+#ignore all files within Local Storage 
