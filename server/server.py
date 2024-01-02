@@ -3,19 +3,14 @@ import zipfile
 from flask import Flask, request, jsonify, send_file, render_template
 import os
 from zipfile import ZipFile
+import sys
+
+# adding TestsShuffler to the system path
+sys.path.insert(0, r'C:\Users\avish\git\TestsShuffler') # here you should change to project dir
+
 from blender.ProccesPdf import main as pdfProccessing
 
 app = Flask(__name__)
-
-
-# func i added in order to clean the directories
-def clear_dir(dir_path, except_endswith="."):
-    for filename in os.listdir(dir_path):
-        file_path = os.path.join(dir_path, filename)
-
-        if os.path.isfile(file_path) and not filename.endswith(except_endswith):
-            os.remove(file_path)
-            print(f"Deleted: {file_path}")
 
 def change_to_project_dir():
     # make sure i'm in the right directory.
@@ -28,6 +23,16 @@ def change_to_project_dir():
         print(f"Moved to parent directory: {parent_directory}")
     else:
         print("Not in a directory named 'server'.")
+
+# func i added in order to clean the directories
+def clear_dir(dir_path, except_endswith="."):
+    for filename in os.listdir(dir_path):
+        file_path = os.path.join(dir_path, filename)
+
+        if os.path.isfile(file_path) and not filename.endswith(except_endswith):
+            os.remove(file_path)
+            print(f"Deleted: {file_path}")
+
 
 @app.route('/')
 def home():

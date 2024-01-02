@@ -1,2 +1,2 @@
-# TestsShuffler
-This will shuffle tests questions   
+# Mixwer
+Belender answers of tests in JCT
