@@ -19,3 +19,5 @@ venv/
 build/
 dist/
 TestsShuffler.egg-info/
+.venv
+*.png

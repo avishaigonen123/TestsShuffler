@@ -1,6 +1,7 @@
 import sys
+
 # adding TestsShuffler to the system path
-sys.path.insert(0, r'C:\Users\avish\git\TestsShuffler') # here you should change to project dir
+sys.path.insert(0, r'C:\Users\avish\git\TestsShuffler')  # here you should change to project dir
 
 import zipfile
 
@@ -11,6 +12,7 @@ from zipfile import ZipFile
 from blender.ProccesPdf import main as pdfProccessing
 
 app = Flask(__name__)
+
 
 def change_to_project_dir():
     # make sure i'm in the right directory.
@@ -23,6 +25,7 @@ def change_to_project_dir():
         print(f"Moved to parent directory: {parent_directory}")
     else:
         print("Not in a directory named 'server'.")
+
 
 # func i added in order to clean the directories
 def clear_dir(dir_path, except_endswith="."):
@@ -42,7 +45,9 @@ def home():
 @app.route('/', methods=['POST'])
 def process_pdf():
     change_to_project_dir()
-
+   
+    os.makedirs('server', exist_ok=True)
+    os.makedirs('server/pdf', exist_ok=True)
     clear_dir('server/pdf')
 
     pdf_files = request.files.getlist('pdfFiles')
