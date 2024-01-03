@@ -1,19 +1,39 @@
-.title {
+.text {
     font-family: system-ui;
     font-weight: bold;
-    font-size: 3em;
-    color: #cc0000; /* Red color */
-    text-align: center;
+    font-size: 1.2em;
+    color: #cc0000;
+    text-align: left;
     margin-bottom: 20px;
 }
 
+.title {
+    font-size: 3em;
+    text-align: center;
+    font-family: cursive;
+}
+
+.description {
+    font-family: cursive;
+    color: #ff0000;
+    font-weight: normal;
+}
 
 .resultMsg {
-    font-weight: bold;
-    font-family: system-ui;
     font-size: 45px;
     margin-top: 20px;
     padding: 10px;
     color: #cf3030;
     text-align: center;
+}
+
+.copyright {
+    font-family: fangsong;
+    color: #271c1c;
+    font-weight: normal;
+    font-size: 15px;
+    background-color: #f4f4f4;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 10px;
 }

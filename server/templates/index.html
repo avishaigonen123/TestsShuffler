@@ -11,10 +11,19 @@
 </head>
 <body>
 
-  <h1 class="title">Tests Blender</h1>
+    <h1 class="text title">Tests Blender</h1>
+
+   <p class="text description">
+    Blend multiple tests with this program:
+    <ol>
+        <li class="text description">Upload one or more PDF files using the "Choose File" button.</li>
+        <li class="text description">Click "Upload PDF" and wait for the process to complete (this may take a few minutes).</li>
+        <li class="text description">Upon success, download your blended tests in a ZIP file.</li>
+    </ol>
+</p>
 
     <div class="upload-section">
-       <div class="file-upload-container">
+        <div class="file-upload-container">
             <input type="file" id="pdfInput" class="file-input" accept=".pdf" multiple>
             <label for="pdfInput" class="file-label button">Choose File</label>
         </div>
@@ -22,14 +31,19 @@
     </div>
 
     <div class="upload-section">
-    <button onclick="downloadZIP()" id="downloadBtn" class="button downloadBtn" hidden>Download ZIP</button>
+        <button onclick="downloadZIP()" id="downloadBtn" class="button downloadBtn" hidden>Download ZIP</button>
     </div>
 
-    <div id="result" class="resultMsg" content="">
+    <div id="result" class="text resultMsg" content="">
     </div>
 
-  <div id="loader"></div>
+    <div id="loader"></div>
+
+    <!-- Add copyrights at the bottom of the page -->
+    <footer>
+        <p class="text copyright">&copy; This website was made by Oz De and Avishai Gonen. All rights reserved.</p>
+    </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-    </body>
+</body>
 </html>
