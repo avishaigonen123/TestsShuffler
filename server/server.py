@@ -31,8 +31,8 @@ def change_to_project_dir():
 def clear_dir(dir_path, except_endswith="."):
     for filename in os.listdir(dir_path):
         file_path = os.path.join(dir_path, filename)
-
-        if os.path.isfile(file_path) and not filename.endswith(except_endswith):
+        
+        if filename != ".gitignore" and os.path.isfile(file_path) and not filename.endswith(except_endswith):
             os.remove(file_path)
             print(f"Deleted: {file_path}")
 
