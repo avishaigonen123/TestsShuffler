@@ -46,8 +46,6 @@ def home():
 def process_pdf():
     change_to_project_dir()
 
-    os.makedirs('server', exist_ok=True)
-    os.makedirs('server/pdf', exist_ok=True)
     clear_dir('server/pdf')
 
     pdf_files = request.files.getlist('pdfFiles')
