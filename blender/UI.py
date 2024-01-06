@@ -28,7 +28,7 @@ uploadFilesButton.place(x=500/2 - 270/2, y=400)
 
 def UploadFiles_button_click():
     file_paths = filedialog.askopenfilenames(filetypes=[("PDF Files", "*.pdf")])
-    array_paths,successFlag = Main.main(file_paths)
+    array_paths,successFlag = Main.process_pdfs(file_paths)
     if successFlag:
         current_datetime = datetime.now()
         # Format the datetime as a string

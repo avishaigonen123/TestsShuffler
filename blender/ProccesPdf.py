@@ -1,19 +1,21 @@
+import os
 
 from blender.Logicalscripts import *
 from blender.FunctionalScripts import *
-
+from blender.constants import output_directory
 
 successPdf = []
 athOfPdf = ""
 answersId = []
 pageCode = True
 detailsBetweenQ = False
+
+
 # input_directory = "C:\\Users\\izeik\\Pictures\\אוטומטים לא מעורבל\\"
-output_directory = "blender\\Local storage of images\\"
+# output_directory = "blender\\images\\"
 
 
-
-def blendPdf():
+def blend_pdf(path_original_pdf: str) -> str:
     # Convert test .pdf to page.png
     path_originial_pages_png = functionalFiles.pdf_to_png(path_original_pdf, output_directory)
 
@@ -53,18 +55,19 @@ def blendPdf():
         paths_of_pages_pdf.append(functionalFiles.png_to_pdf(current_page))
     print("Success convert pages to.pdf\n")
 
-    ouput_pdf_path = "blender\\Final PDFs\\" + path_original_pdf[path_original_pdf.rfind("/") + 1:-4] + " מעורבל"
+    output_pdf_path = os.path.join("blender", "final_pdfs",
+                                   path_original_pdf[path_original_pdf.rfind("/") + 1:-4] + "scramble")
     functionalFiles.merge_pdf(paths_of_pages_pdf,
-                              ouput_pdf_path)
+                              output_pdf_path)
     print("Success merge pages\n")
 
     functionalFiles.delete_files(tuple(
         functionalFiles.getFilesPaths()[0] + B for B in functionalFiles.getFilesPaths()[1]))
 
-    return ouput_pdf_path
+    return output_pdf_path
 
 
-def main(array_paths):
+def process_pdfs(array_paths):
     '''
     First conver the PDF to PNG files and combine and delete them.
     The answers and questions are exported to PNG files.
@@ -76,21 +79,22 @@ def main(array_paths):
     for pdf_file_path in array_paths:
         global path_original_pdf
         path_original_pdf = pdf_file_path
-        fileNameEnd = path_original_pdf[path_original_pdf.rfind("\\") + 1:-4] + " מעורבל" + path_original_pdf[-4:]
+        file_name = os.path.basename(path_original_pdf)
+        fileNameEnd = path_original_pdf[path_original_pdf.rfind("\\") + 1:-4] + "scramble" + path_original_pdf[-4:]
         try:
             # zip all the successPdf
-            successPdf.append(blendPdf() + ".pdf")
+            successPdf.append(blend_pdf(path_original_pdf=path_original_pdf) + ".pdf")
 
             print("SUCCESS {}".format(fileNameEnd))
         except Exception as e:
             print("NOT  SUCCESS {}".format(fileNameEnd) + " ERROR: ", e)
             failPdf.append(pdf_file_path)
-    return successPdf,successPdf != []
-
-
-if __name__ == "__ProccessPdf__":
-    main()
+    return successPdf, successPdf != []
 
 
 def get_output_directory():
     return output_directory
+
+
+if __name__ == "__ProccessPdf__":
+    process_pdfs()

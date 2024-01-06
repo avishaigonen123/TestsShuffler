@@ -45,7 +45,7 @@ def createAnswersPage(path_answers):
 
 
 def reCrop():
-    ouput_directory,list_files = functionalFiles.getFilesPaths()
+    output_directory,list_files = functionalFiles.getFilesPaths()
     for pathC in enumerate(list_files):
         if "answer" in pathC[1] or "prefix" in pathC[1]:
             editPng.cropSpaceEndPng(functionalFiles.getOutputDirectoryPath() + pathC[1])

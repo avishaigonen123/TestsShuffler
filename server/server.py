@@ -1,7 +1,7 @@
 import sys
 
 # adding TestsShuffler to the system path
-sys.path.insert(0, r'C:\Users\avish\git\TestsShuffler')  # here you should change to project dir
+# sys.path.insert(0, r'C:\Users\avish\git\TestsShuffler')  # here you should change to project dir
 
 import zipfile
 
@@ -9,7 +9,7 @@ from flask import Flask, request, jsonify, send_file, render_template
 import os
 from zipfile import ZipFile
 
-from blender.ProccesPdf import main as pdfProccessing
+from blender.ProccesPdf import process_pdfs
 
 app = Flask(__name__)
 
@@ -59,7 +59,7 @@ def process_pdf():
         pdf_paths.append(pdf_file_path)
 
     print(pdf_paths)
-    array_paths, success_flag = pdfProccessing(pdf_paths)
+    array_paths, success_flag = process_pdfs(pdf_paths)
 
     print(array_paths)
 
@@ -81,7 +81,7 @@ def process_pdf():
 def download_zip():
     try:
         # Take the temporary ZIP file
-        zip_filename = 'pdf\\generated.zip'
+        zip_filename = 'pdf/generated.zip'
         return send_file(zip_filename, as_attachment=True)
 
     except Exception as e:

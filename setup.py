@@ -20,6 +20,7 @@ setup(
         'PyPDF4==1.27.0',
         'pytesseract==0.3.10',
         'Werkzeug==3.0.1',
+        'pytest'
     ],
     entry_points={
         'console_scripts': [

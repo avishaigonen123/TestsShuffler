@@ -1,14 +1,21 @@
 import re
-
+import os
 import numpy as np
 import pytesseract
 import cv2
 
 from blender.FunctionalScripts import editPng, functionalFiles
 
-pytesseract.pytesseract.tesseract_cmd=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+def is_windows():
+    return platform.system() == 'Windows'
 
-ouput_directory = "blender\\Local storage of images\\"
+
+if is_windows:
+    pytesseract.pytesseract.tesseract_cmd=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+else:
+    pytesseract.pytesseract.tesseract_cmd='tesseract'
+
+output_directory = "blender/images/"
 
 
 def find_index_correct_ocr(words,target_word):
@@ -198,7 +205,7 @@ def mixfiles():
             a += 1
         q += 1
 
-    pattern = ouput_directory.replace("\\", "\\\\") + r"question_\d+_prefix.png"
+    pattern = output_directory.replace("\\", "\\\\") + r"question_\d+_prefix.png"
     i = 0
     while i < len(shuffleQuestions):
         isPerfix = re.fullmatch(pattern, shuffleQuestions[i])

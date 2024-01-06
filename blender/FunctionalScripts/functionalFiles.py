@@ -7,7 +7,7 @@ import zipfile
 
 from blender.FunctionalScripts import editPng
 
-ouput_directory = "blender\\Local storage of images\\"
+output_directory = "blender/images/"
 
 
 
@@ -78,10 +78,10 @@ def combineFiles(arrayPath,output_path):
 
 
 def getFilesPaths():
-    return ouput_directory,os.listdir(ouput_directory)
+    return output_directory,os.listdir(output_directory)
 
 def getOutputDirectoryPath():
-    return ouput_directory
+    return output_directory
 
 
 def zipPdf(array_paths,zip_path):
