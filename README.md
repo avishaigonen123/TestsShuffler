@@ -11,6 +11,7 @@ Belender answers of tests in JCT
 ### On mac
 ```bash
  brew intall tesseract
+ download heb.traineddata (add wget command)
 ```
 
 install https://pdf2image.readthedocs.io/en/latest/installation.html

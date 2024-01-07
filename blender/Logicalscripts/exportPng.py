@@ -7,7 +7,7 @@ from blender.FunctionalScripts import functionalBox
 from blender.FunctionalScripts import functionalFiles
 
 
-def export_questions(array_path, ouput_directory):
+def export_questions(array_path, output_directory):
     HEIGHT_BEGIN_Q = 140
     questions_paths = []
     general_num_Q = 1
@@ -34,7 +34,7 @@ def export_questions(array_path, ouput_directory):
                     cropped_image = open_img[coordCurrent[1] - 10:open_img.shape[0], 0:open_img.shape[1]]
                 else:
                     cropped_image = open_img[coordCurrent[1]:open_img.shape[0], 0:open_img.shape[1]]
-            path = ouput_directory + 'question_{}.png'.format(general_num_Q)
+            path = output_directory + 'question_{}.png'.format(general_num_Q)
             cv2.imwrite(path, cropped_image)
             questions_paths.append(path)
             general_num_Q += 1
@@ -53,54 +53,55 @@ def export_questions(array_path, ouput_directory):
             else:
                 coordCurrent = [0, open_img.shape[0], 0, 0]
             cropped_image = open_img[0:coordCurrent[1], 0:open_img.shape[1]]
-            path = ouput_directory + 'continue_question_{}.png'.format(general_num_Q - page_num_Q)
+            path = output_directory + 'continue_question_{}.png'.format(general_num_Q - page_num_Q)
             cv2.imwrite(path, cropped_image)
 
-            merge_png = [ouput_directory + 'question_{}.png'.format(general_num_Q - page_num_Q)
+            merge_png = [output_directory + 'question_{}.png'.format(general_num_Q - page_num_Q)
                 , path]
             functionalFiles.combineFiles(merge_png
-                                         , ouput_directory + 'question_{}'.format(general_num_Q - page_num_Q))
+                                         , output_directory + 'question_{}'.format(general_num_Q - page_num_Q))
 
     return questions_paths, general_num_Q - 1
 
 
-def export_answers(pathRoot, answersId, ouput_directory):
-    image = cv2.imread(pathRoot)
-    first_words = logicalList.find_first_words(pathRoot, answersId, False)
-    halfPath = pathRoot[pathRoot.rfind("\\") + 1:]
-    numQ = int(halfPath[9:-4])
-    if numQ == 10:
+def output_directory(path_root, answers_id, output_directory):
+    image = cv2.imread(path_root)
+    first_words = logicalList.find_first_words(path_root, answers_id, False)
+    half_path = path_root[path_root.rfind("\\") + 1:]
+    num_q = int(
+        path_root.split('_')[1].split('.')[0])  # TODO build regauler export to ger question name refactor to function
+    if num_q == 10:
         pass
-    coordNext = []
+    coord_next = []
     try:
-        for charAns in answersId[1:]:
-            if charAns == answersId[1]:
-                coordNext = [0, 10, 0, 0]
-            coordCurrent = coordNext
+        for charAns in answers_id[1:]:
+            if charAns == answers_id[1]:
+                coord_next = [0, 10, 0, 0]
+            coordCurrent = coord_next
             # If it is the last answer in the qestion
-            if charAns != answersId[-1]:
+            if charAns != answers_id[-1]:
                 try:
-                    coordNext = functionalBox.wordToBox(charAns, first_words, answersId)
+                    coord_next = functionalBox.wordToBox(charAns, first_words, answers_id)
                 except:
                     # Crop the image from the begin of the last A, in order to make OCR read better
                     cropped_image = image[coordCurrent[1] - 10:image.shape[0], 0:image.shape[1]]
 
-                    cv2.imwrite(pathRoot, cropped_image)
-                    image = cv2.imread(pathRoot)
-                    first_words = logicalList.find_first_words(pathRoot, answersId, False)
+                    cv2.imwrite(path_root, cropped_image)
+                    image = cv2.imread(path_root)
+                    first_words = logicalList.find_first_words(path_root, answers_id, False)
 
-                    coordNext = functionalBox.wordToBox(charAns, first_words, answersId)
+                    coord_next = functionalBox.wordToBox(charAns, first_words, answers_id)
             else:
-                coordNext = [image.shape[1], image.shape[0], image.shape[1], image.shape[0]]
-            cropped_image = image[coordCurrent[1] - 10:coordNext[1] - 10, 0:image.shape[1]]
+                coord_next = [image.shape[1], image.shape[0], image.shape[1], image.shape[0]]
+            cropped_image = image[coordCurrent[1] - 10:coord_next[1] - 10, 0:image.shape[1]]
             try:
-                if charAns != answersId[1]:
-                    pathC = ouput_directory + 'question_{}_answer_{}.png'.format(numQ, answersId.index(charAns) - 1)
+                if charAns != answers_id[1]:
+                    pathC = output_directory + 'question_{}_answer_{}.png'.format(num_q, answers_id.index(charAns) - 1)
                 else:
-                    pathC = ouput_directory + 'question_{}_prefix.png'.format(numQ)
+                    pathC = output_directory + 'question_{}_prefix.png'.format(num_q)
                 cv2.imwrite(pathC, cropped_image)
             except:
                 cv2.imwrite(pathC, image[0:30, 0:image.shape[1]])
-                print(fr"ERROR question - {numQ} answer - {answersId.index(charAns)}")
+                print(fr"ERROR question - {num_q} answer - {answers_id.index(charAns)}")
     except:
-        print(fr"ERROR question - {numQ} - fill with white")
+        print(fr"ERROR question - {num_q} - fill with white")
