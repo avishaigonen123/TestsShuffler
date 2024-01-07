@@ -3,7 +3,7 @@ import os
 from blender.ProccesPdf import process_pdfs, blend_pdf
 
 test_root_dir = os.path.dirname(os.path.realpath(__file__))
-test_data_dir = test_root_dir + "data"
+test_data_dir = os.path.join(test_root_dir , "data")
 
 
 def test_processpdfs():

@@ -5,14 +5,16 @@ import cv2
 
 from blender.Logicalscripts import logicalList
 
-pytesseract.pytesseract.tesseract_cmd=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+# pytesseract.pytesseract.tesseract_cmd=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def rightFirstWordToBox(path, answersId):
     image = cv2.imread(path)
     boxes = pytesseract.image_to_data(image, lang='eng+heb', config='--oem 2 --psm 6',
                                       output_type=pytesseract.Output.DICT)
     try:
-        return wordToBox(answersId[int(path[path.rfind("_") + 1:-4])], boxes, answersId, 1, True)[2]#TODO: go over and find the righest not white pixel
+        return wordToBox(answersId[int(path[path.rfind("_") + 1:-4])], boxes, answersId, 1, True)[
+            2]  # TODO: go over and find the righest not white pixel
     except:
         return 1530
 

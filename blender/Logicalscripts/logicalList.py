@@ -1,3 +1,4 @@
+import platform
 import re
 import os
 import numpy as np
@@ -6,23 +7,26 @@ import cv2
 
 from blender.FunctionalScripts import editPng, functionalFiles
 
+
 def is_windows():
     return platform.system() == 'Windows'
 
 
-if is_windows:
-    pytesseract.pytesseract.tesseract_cmd=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-else:
-    pytesseract.pytesseract.tesseract_cmd='tesseract'
-
+# if is_windows:
+#     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# else:
+#     pytesseract.pytesseract.tesseract_cmd = 'tesseract'
+#
 output_directory = "blender/images/"
 
 
-def find_index_correct_ocr(words,target_word):
+def find_index_correct_ocr(words, target_word):
     if target_word in words:
         return words.index(target_word)
     return -1
-def find_index(words, target_word, answersId, num=1,skipBefore = False):
+
+
+def find_index(words, target_word, answersId, num=1, skipBefore=False):
     if target_word == answersId[0]:  # for "שאלה"
         if words.count("שאלה" == 0):
             return -1
@@ -45,10 +49,11 @@ def find_index(words, target_word, answersId, num=1,skipBefore = False):
             if answersId.index(target_word) == 1 or skipBefore:
                 index_before = -1
             else:
-                index_before =find_index(words,answersId[answersId.index(target_word)-1],answersId)
+                index_before = find_index(words, answersId[answersId.index(target_word) - 1], answersId)
             try:
                 if target_word != answersId[-2]:
-                    index_after =find_index(words,answersId[answersId.index(target_word)+1],answersId,skipBefore=True)
+                    index_after = find_index(words, answersId[answersId.index(target_word) + 1], answersId,
+                                             skipBefore=True)
                     i = index_after
                     while i > 0:
                         if word != '' and target_word[0] in words[i][0]:
@@ -63,17 +68,20 @@ def find_index(words, target_word, answersId, num=1,skipBefore = False):
             except:
                 pass
             for i, word in enumerate(words):
-                if index_before < i and word in ["-",".","--","\\\\","(\\"]:
+                if index_before < i and word in ["-", ".", "--", "\\\\", "(\\"]:
                     return i
             raise Exception("Not find {} in this image".format(target_word))
         return words.index(target_word)
 
+
 def find_index_answer(words):
-    for i,word in enumerate(words):
+    for i, word in enumerate(words):
         if word == "":
             pass
         else:
             return i
+
+
 def last_occurrence(word, array):
     array_reversed = array[::-1]
     try:
@@ -82,7 +90,8 @@ def last_occurrence(word, array):
     except ValueError:
         return -1
 
-def find_first_words(path, answersId=[], fromQ = True, disable_consecutive_q = False):
+
+def find_first_words(path, answersId=[], fromQ=True, disable_consecutive_q=False):
     image = cv2.imread(path)
     boxes = pytesseract.image_to_data(image, lang='heb', config='--oem 2 --psm 6',
                                       output_type=pytesseract.Output.DICT)
@@ -95,7 +104,7 @@ def find_first_words(path, answersId=[], fromQ = True, disable_consecutive_q = F
             first_space = True
         elif boxes["text"][i] != "" and (first_space or boxes["line_num"][i] != line_number):
             line_number = boxes["line_num"][i]
-            if boxes['text'][i] == "שאלה" and boxes['text'][i+1] == "מספר":
+            if boxes['text'][i] == "שאלה" and boxes['text'][i + 1] == "מספר":
                 boxes['text'][i] = "שאלה מספר"
             first_words_boxes['text'].append(boxes['text'][i])  # Extract the bounding boxes for each word
             first_words_boxes['left'].append(boxes['left'][i])  # Extract the bounding boxes for each word
@@ -113,7 +122,7 @@ def find_first_words(path, answersId=[], fromQ = True, disable_consecutive_q = F
                     first_words_boxes['text'][i] = answersId[j]
                     break
 
-    if disable_consecutive_q:    # If "שאלה" after "שאלה" delete it
+    if disable_consecutive_q:  # If "שאלה" after "שאלה" delete it
         arr = np.array(first_words_boxes['text'])
 
         x = np.where(arr == answersId[0])
@@ -134,17 +143,19 @@ def start_first_words_from_Q(first_word_boxes, answersId):
     first_word_boxes['height'] = first_word_boxes['height'][index_first_q:]
     return first_word_boxes
 
-def isCorrectOCR(words):
 
-    if all(word in words for word in [ "א.", "ב.", "ג.", "ד."]) and all("\\" not in word for word in words):
+def isCorrectOCR(words):
+    if all(word in words for word in ["א.", "ב.", "ג.", "ד."]) and all("\\" not in word for word in words):
         return True
-    return False#TODO check problems
+    return False  # TODO check problems
+
+
 def findNumAnswers(pathOfMerge):
     first_words = find_first_words(pathOfMerge, [], False)
     if isCorrectOCR(first_words['text']):
-        indexH = find_index_correct_ocr(first_words['text'],"ה.")
-        indexD = find_index_correct_ocr(first_words['text'],"ד.")
-        indexB = find_index_correct_ocr(first_words['text'],"ב.")
+        indexH = find_index_correct_ocr(first_words['text'], "ה.")
+        indexD = find_index_correct_ocr(first_words['text'], "ד.")
+        indexB = find_index_correct_ocr(first_words['text'], "ב.")
         if indexH != -1:
             return ["שאלה מספר", "א.", "ב.", "ג.", "ד.", "ה.", "A"]
         elif indexD != -1:
@@ -152,15 +163,14 @@ def findNumAnswers(pathOfMerge):
         else:
             return ["שאלה מספר", "א.", "ב.", "A"]
 
-
     try:
         indexH = find_index(first_words['text'], "ה.",
-                      ["שאלה מספר", "א.", "ב.", "ג.", "ד.", "ה.", "A"])
+                            ["שאלה מספר", "א.", "ב.", "ג.", "ד.", "ה.", "A"])
         indexD = find_index(first_words['text'], "ד.",
-                      ["שאלה מספר", "א.", "ב.", "ג.", "ד.", "ה.", "A"])
+                            ["שאלה מספר", "א.", "ב.", "ג.", "ד.", "ה.", "A"])
         indexB = find_index(first_words['text'], "ב.",
-                      ["שאלה מספר", "א.", "ב.", "A"])
-        if  indexH != -1 and indexD < indexH:
+                            ["שאלה מספר", "א.", "ב.", "A"])
+        if indexH != -1 and indexD < indexH:
             return ["שאלה מספר", "א.", "ב.", "ג.", "ד.", "ה.", "A"]
         if indexB != -1 and indexD == -1 and indexH == -1:
             return ["שאלה מספר", "א.", "ב.", "A"]
@@ -169,7 +179,7 @@ def findNumAnswers(pathOfMerge):
             indexD = find_index(first_words['text'], "ד.",
                                 ["שאלה מספר", "א.", "ב.", "ג.", "ד.", "ה.", "A"])
             indexB = find_index(first_words['text'], "ב.",
-                      ["שאלה מספר", "א.", "ב.", "A"])
+                                ["שאלה מספר", "א.", "ב.", "A"])
             if indexB != -1 and indexD == -1:
                 return ["שאלה מספר", "א.", "ב.", "A"]
             return ["שאלה מספר", "א.", "ב.", "ג.", "ד.", "A"]
