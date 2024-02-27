@@ -72,8 +72,8 @@ def export_answers(path_root, answers_id, output_directory):
     first_words = logicalList.find_first_words(path_root, answers_id, False)
     halfPath = path_root[path_root.rfind("/") + 1:]
     print(halfPath)
-    numQ = int(halfPath[9:-4])
-    if numQ == 10:
+    num_q = int(halfPath[9:-4])
+    if num_q == 10:
         pass
     coord_next = []
     try:
