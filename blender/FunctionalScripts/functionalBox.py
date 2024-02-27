@@ -5,8 +5,6 @@ import cv2
 
 from blender.Logicalscripts import logicalList
 
-pytesseract.pytesseract.tesseract_cmd=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
 def rightFirstWordToBox(path, answersId):
     image = cv2.imread(path)
     boxes = pytesseract.image_to_data(image, lang='eng+heb', config='--oem 2 --psm 6',

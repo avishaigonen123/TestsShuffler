@@ -4,6 +4,11 @@ from PIL import Image, ImageFont, ImageDraw
 
 from blender.FunctionalScripts import editPng, functionalFiles
 
+def textsize(text, font):
+    im = Image.new(mode="P", size=(0, 0))
+    draw = ImageDraw.Draw(im)
+    _, _, width, height = draw.textbbox((0, 0), text=text, font=font)
+    return width, height
 
 def createAnswersPage(path_answers):
     PAGE_HEIGHT = 1805
@@ -25,7 +30,7 @@ def createAnswersPage(path_answers):
                                    , num_answer)
             font = ImageFont.truetype('arial.ttf', 40)
             draw = ImageDraw.Draw(blank)
-            text_width, text_height = draw.textsize(text, font=font)
+            text_width, text_height = textsize(text, font=font)
 
             text_x = (PAGE_WIDTH - text_width) / 2
             text_y = (70 - text_height) / 2
