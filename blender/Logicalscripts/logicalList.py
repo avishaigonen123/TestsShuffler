@@ -192,10 +192,6 @@ def mixfiles():
 
     # Get a list of all files in the directory
 
-    # Create a list of file paths by joining the directory path with each file name
-    print("file list is: ", file_list)
-    print("directory path: ", directory_path)
-
     arrayAnswers = []
     q = 1
     while f"question_{q}.png" in file_list:
@@ -217,7 +213,7 @@ def mixfiles():
             a += 1
         q += 1
 
-    pattern = output_directory.replace("/", "//") + r"question_/d+_prefix.png"
+    pattern = output_directory.replace("/", "//") + r"question_\d+_prefix.png"
     i = 0
     while i < len(shuffleQuestions):
         isPerfix = re.fullmatch(pattern, shuffleQuestions[i])
