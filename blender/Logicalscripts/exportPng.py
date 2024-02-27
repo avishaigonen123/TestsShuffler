@@ -70,10 +70,9 @@ def export_answers(path_root, answers_id, output_directory):
     print(answers_id)
     image = cv2.imread(path_root)
     first_words = logicalList.find_first_words(path_root, answers_id, False)
-    half_path = path_root[path_root.rfind("/") + 1:]
-    num_q = int(
-        half_path.split('_')[1].split('.')[0])  # TODO build regauler export to ger question name refactor to function
-    if num_q == 10:
+    halfPath = path_root[path_root.rfind("/") + 1:]
+    numQ = int(halfPath[9:-4])
+    if numQ == 10:
         pass
     coord_next = []
     try:
