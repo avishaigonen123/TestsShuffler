@@ -27,14 +27,14 @@ def createAnswersPage(path_answers):
             num_answer = 1
         elif pathEnd == '1':
             num_q = cpath[cpath.find("_") + 1:cpath.rfind("_") - 7]
-            print("before")
 
             blank = Image.new("RGBA", (PAGE_WIDTH, 70), (255, 255, 255, 255))
-            print("after")
 
             text = "Question {} : Answer {}".format(num_q
                                    , num_answer)
             font = ImageFont.truetype('arial.ttf', 40)
+            print("before")
+
             draw = ImageDraw.Draw(blank)
             print("before")
             text_width, text_height = textsize(text, font=font)
