@@ -192,6 +192,7 @@ def mixfiles():
 
     # Get a list of all files in the directory
 
+    print(file_list)
     arrayAnswers = []
     q = 1
     while f"question_{q}.png" in file_list:
