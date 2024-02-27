@@ -33,7 +33,7 @@ def createAnswersPage(path_answers):
             text = f"Question {num_q} : Answer {num_answer}"
             print("before")
 
-            font = ImageFont.truetype('arial.ttf', 40)
+            font = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', 40)
 
             draw = ImageDraw.Draw(blank)
             print("before")
