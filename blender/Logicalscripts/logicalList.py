@@ -68,7 +68,7 @@ def find_index(words, target_word, answersId, num=1, skipBefore=False):
             except:
                 pass
             for i, word in enumerate(words):
-                if index_before < i and word in ["-", ".", "--", "\\\\", "(\\"]:
+                if index_before < i and word in ["-", ".", "--", "//", "(/"]:
                     return i
             raise Exception("Not find {} in this image".format(target_word))
         return words.index(target_word)
