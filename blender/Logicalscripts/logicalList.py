@@ -229,6 +229,7 @@ def mixfiles():
             while i < len(shuffleQuestions) and not re.fullmatch(pattern, shuffleQuestions[i]):
                 if i == 40:
                     pass
+                print("trying execute")
                 editPng.rewriteAnswer(shuffleQuestions[i], counterA,
                                       editPng.rightmost_non_white_black_pixel(shuffleQuestions[i]))
                 counterA += 1
