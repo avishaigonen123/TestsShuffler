@@ -1,4 +1,5 @@
 import cv2
+import os
 
 Qsign = "שאלה מספר"
 
@@ -96,9 +97,9 @@ def export_answers(path_root, answers_id, output_directory):
             cropped_image = image[coordCurrent[1] - 10:coord_next[1] - 10, 0:image.shape[1]]
             try:
                 if charAns != answers_id[1]:
-                    pathC = output_directory + 'question_{}_answer_{}.png'.format(num_q, answers_id.index(charAns) - 1)
+                    pathC = os.path.dir(output_directory, f'question_{num_q}_answer_{answers_id.index(charAns) - 1}.png')
                 else:
-                    pathC = output_directory + 'question_{}_prefix.png'.format(num_q)
+                    pathC = os.path.dir(output_directory, f'question_{num_q}_prefix.png')
                 cv2.imwrite(pathC, cropped_image)
             except:
                 cv2.imwrite(pathC, image[0:30, 0:image.shape[1]])
