@@ -57,6 +57,9 @@ def reCrop():
 
 
 def combineFilestoPages(array_path, output_dir,prefixFile = "final_page"):
+    print(array_path)
+    print(output_dir)
+
     page_num = 1
     total_height = 0
     images_to_combine = []
