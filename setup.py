@@ -16,7 +16,7 @@ setup(
         'opencv-python==4.8.1.78',
         'packaging==23.2',
         'pdf2image==1.16.3',
-        'Pillow==9.5.0',
+        'Pillow==10.0.0',
         'PyPDF4==1.27.0',
         'pytesseract==0.3.10',
         'Werkzeug==3.0.1',

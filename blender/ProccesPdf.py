@@ -80,7 +80,7 @@ def process_pdfs(array_paths):
         global path_original_pdf
         path_original_pdf = pdf_file_path
         file_name = os.path.basename(path_original_pdf)
-        fileNameEnd = path_original_pdf[path_original_pdf.rfind("\\") + 1:-4] + "scramble" + path_original_pdf[-4:]
+        fileNameEnd = path_original_pdf[path_original_pdf.rfind("/") + 1:-4] + "scramble" + path_original_pdf[-4:]
         try:
             # zip all the successPdf
             successPdf.append(blend_pdf(path_original_pdf=path_original_pdf) + ".pdf")

@@ -215,7 +215,7 @@ def mixfiles():
             a += 1
         q += 1
 
-    pattern = output_directory.replace("\\", "\\\\") + r"question_\d+_prefix.png"
+    pattern = output_directory.replace("/", "//") + r"question_/d+_prefix.png"
     i = 0
     while i < len(shuffleQuestions):
         isPerfix = re.fullmatch(pattern, shuffleQuestions[i])
