@@ -71,6 +71,7 @@ def export_answers(path_root, answers_id, output_directory):
     image = cv2.imread(path_root)
     first_words = logicalList.find_first_words(path_root, answers_id, False)
     halfPath = path_root[path_root.rfind("/") + 1:]
+    print(halfPath)
     numQ = int(halfPath[9:-4])
     if numQ == 10:
         pass
