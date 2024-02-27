@@ -11,6 +11,8 @@ def textsize(text, font):
     return width, height
 
 def createAnswersPage(path_answers):
+    print(path_answers)
+
     PAGE_HEIGHT = 1805
     PAGE_WIDTH = 1700
     image_array = []
@@ -57,9 +59,6 @@ def reCrop():
 
 
 def combineFilestoPages(array_path, output_dir,prefixFile = "final_page"):
-    print(array_path)
-    print(output_dir)
-
     page_num = 1
     total_height = 0
     images_to_combine = []
