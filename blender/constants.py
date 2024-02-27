@@ -1,1 +1,1 @@
-output_directory = 'blender/images'
+output_directory = 'blender/images/'
