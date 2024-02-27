@@ -203,7 +203,6 @@ def mixfiles():
         np.random.shuffle(arrayAnswers[q - 1])
         q += 1
 
-    print("after this1")
 
     shuffleQuestions = []
     q = 0
@@ -214,9 +213,12 @@ def mixfiles():
             shuffleQuestions.append(arrayAnswers[q][a])
             a += 1
         q += 1
-    print("after this2")
 
+    
     pattern = output_directory.replace("/", "//") + r"question_\d+_prefix.png"
+
+    print(shuffleQuestions)
+    print(pattern)
     i = 0
     while i < len(shuffleQuestions):
         isPerfix = re.fullmatch(pattern, shuffleQuestions[i])
@@ -232,4 +234,6 @@ def mixfiles():
                 counterA += 1
                 i += 1
     i += 1
+
+    print("after all")
     return shuffleQuestions
