@@ -193,24 +193,26 @@ def mixfiles():
     # Get a list of all files in the directory
 
     # Create a list of file paths by joining the directory path with each file name
+    print("file list is: ", file_list)
+    print("directory path: ", directory_path)
 
     arrayAnswers = []
     q = 1
-    while "question_{}.png".format(q) in file_list:
+    while f"question_{q}.png" in file_list:
         arrayAnswers.append([])
         a = 1
-        while "question_{}_answer_{}.png".format(q, a) in file_list:
-            arrayAnswers[q - 1].append(directory_path + "question_{}_answer_{}.png".format(q, a))
+        while f"question_{q}_answer_{a}.png" in file_list:
+            arrayAnswers[q - 1].append(directory_path + f"question_{q}_answer_{a}.png")
             a += 1
         np.random.shuffle(arrayAnswers[q - 1])
         q += 1
 
     shuffleQuestions = []
     q = 0
-    while "question_{}.png".format(q + 1) in file_list:
-        shuffleQuestions.append(directory_path + "question_{}_prefix.png".format(q + 1))
+    while f"question_{q+1}.png" in file_list:
+        shuffleQuestions.append(directory_path + f"question_{q+1}_prefix.png")
         a = 0
-        while "question_{}_answer_{}.png".format(q + 1, a + 1) in file_list:
+        while f"question_{q + 1}_answer_{a + 1}.png" in file_list:
             shuffleQuestions.append(arrayAnswers[q][a])
             a += 1
         q += 1
