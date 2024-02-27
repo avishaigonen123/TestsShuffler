@@ -215,7 +215,7 @@ def mixfiles():
         q += 1
 
     
-    pattern = output_directory.replace("/", "//") + r"question_\d+_prefix.png"
+    pattern = output_directory + r"question_\d+_prefix.png"
 
     print(shuffleQuestions)
     print(pattern)
