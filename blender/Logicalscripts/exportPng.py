@@ -72,7 +72,7 @@ def export_answers(path_root, answers_id, output_directory):
     first_words = logicalList.find_first_words(path_root, answers_id, False)
     half_path = path_root[path_root.rfind("/") + 1:]
     num_q = int(
-        path_root.split('_')[1].split('.')[0])  # TODO build regauler export to ger question name refactor to function
+        half_path.split('_')[1].split('.')[0])  # TODO build regauler export to ger question name refactor to function
     if num_q == 10:
         pass
     coord_next = []
