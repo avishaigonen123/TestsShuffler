@@ -65,46 +65,43 @@ def export_questions(array_path, output_directory):
     return questions_paths, general_num_Q - 1
 
 
-def export_answers(path_root, answers_id, output_directory):
-    print(path_root)
-    print(answers_id)
-    image = cv2.imread(path_root)
-    first_words = logicalList.find_first_words(path_root, answers_id, False)
-    halfPath = path_root[path_root.rfind("/") + 1:]
-    print(halfPath)
-    num_q = int(halfPath[9:-4])
-    if num_q == 10:
+def export_answers(pathRoot, answersId, ouput_directory):
+    image = cv2.imread(pathRoot)
+    first_words = logicalList.find_first_words(pathRoot, answersId, False)
+    halfPath = pathRoot[pathRoot.rfind("/") + 1:]
+    numQ = int(halfPath[9:-4])
+    if numQ == 10:
         pass
-    coord_next = []
+    coordNext = []
     try:
-        for charAns in answers_id[1:]:
-            if charAns == answers_id[1]:
-                coord_next = [0, 10, 0, 0]
-            coordCurrent = coord_next
+        for charAns in answersId[1:]:
+            if charAns == answersId[1]:
+                coordNext = [0, 10, 0, 0]
+            coordCurrent = coordNext
             # If it is the last answer in the qestion
-            if charAns != answers_id[-1]:
+            if charAns != answersId[-1]:
                 try:
-                    coord_next = functionalBox.wordToBox(charAns, first_words, answers_id)
+                    coordNext = functionalBox.wordToBox(charAns, first_words, answersId)
                 except:
                     # Crop the image from the begin of the last A, in order to make OCR read better
                     cropped_image = image[coordCurrent[1] - 10:image.shape[0], 0:image.shape[1]]
 
-                    cv2.imwrite(path_root, cropped_image)
-                    image = cv2.imread(path_root)
-                    first_words = logicalList.find_first_words(path_root, answers_id, False)
+                    cv2.imwrite(pathRoot, cropped_image)
+                    image = cv2.imread(pathRoot)
+                    first_words = logicalList.find_first_words(pathRoot, answersId, False)
 
-                    coord_next = functionalBox.wordToBox(charAns, first_words, answers_id)
+                    coordNext = functionalBox.wordToBox(charAns, first_words, answersId)
             else:
-                coord_next = [image.shape[1], image.shape[0], image.shape[1], image.shape[0]]
-            cropped_image = image[coordCurrent[1] - 10:coord_next[1] - 10, 0:image.shape[1]]
+                coordNext = [image.shape[1], image.shape[0], image.shape[1], image.shape[0]]
+            cropped_image = image[coordCurrent[1] - 10:coordNext[1] - 10, 0:image.shape[1]]
             try:
-                if charAns != answers_id[1]:
-                    pathC = os.path.dir(output_directory, f'question_{num_q}_answer_{answers_id.index(charAns) - 1}.png')
+                if charAns != answersId[1]:
+                    pathC = ouput_directory + 'question_{}_answer_{}.png'.format(numQ, answersId.index(charAns) - 1)
                 else:
-                    pathC = os.path.dir(output_directory, f'question_{num_q}_prefix.png')
+                    pathC = ouput_directory + 'question_{}_prefix.png'.format(numQ)
                 cv2.imwrite(pathC, cropped_image)
             except:
                 cv2.imwrite(pathC, image[0:30, 0:image.shape[1]])
-                print(fr"ERROR question - {num_q} answer - {answers_id.index(charAns)}")
+                print(fr"ERROR question - {numQ} answer - {answersId.index(charAns)}")
     except:
-        print(fr"ERROR question - {num_q} - fill with white")
+        print(fr"ERROR question - {numQ} - fill with white")
