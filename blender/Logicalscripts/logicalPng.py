@@ -32,8 +32,9 @@ def createAnswersPage(path_answers):
                                    , num_answer)
             font = ImageFont.truetype('arial.ttf', 40)
             draw = ImageDraw.Draw(blank)
+            print("before")
             text_width, text_height = textsize(text, font=font)
-
+            print("after")
             text_x = (PAGE_WIDTH - text_width) / 2
             text_y = (70 - text_height) / 2
 
