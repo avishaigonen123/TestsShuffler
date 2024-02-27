@@ -226,6 +226,7 @@ def mixfiles():
             counterA = 1
             i += 1
             isPerfix = False
+            print("bkabka")
             while i < len(shuffleQuestions) and not re.fullmatch(pattern, shuffleQuestions[i]):
                 if i == 40:
                     pass
