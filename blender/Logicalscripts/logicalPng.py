@@ -95,10 +95,10 @@ def combineFilestoPages(array_path, output_dir,prefixFile = "final_page"):
             padding = Image.new("RGBA", (PAGE_WIDTH, padding_height), (255, 255, 255, 255))
             images_to_combine.append(padding)
             if page_num != 1:
-                padding = Image.open(r"blender/Used Png/Final_Pages_Png/beginPage.png")
+                padding = Image.open(r"blender/Used_Png/Final_Pages_Png/beginPage.png")
                 images_to_combine.insert(0,padding)
             else:
-                padding = Image.open(r"blender/Used Png/Final_Pages_Png/FirstbeginPage.png")
+                padding = Image.open(r"blender/Used_Png/Final_Pages_Png/FirstbeginPage.png")
                 images_to_combine.insert(0,padding)
 
             # Combine the images and save to a new file

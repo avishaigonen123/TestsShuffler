@@ -204,7 +204,6 @@ def mixfiles():
         np.random.shuffle(arrayAnswers[q - 1])
         q += 1
 
-    print(arrayAnswers)
     shuffleQuestions = []
     q = 0
     while f"question_{q+1}.png" in file_list:
