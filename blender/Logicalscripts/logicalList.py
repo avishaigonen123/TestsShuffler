@@ -218,8 +218,6 @@ def mixfiles():
     
     pattern = output_directory + r"question_\d+_prefix.png"
 
-    print(shuffleQuestions)
-    print(pattern)
     i = 0
     while i < len(shuffleQuestions):
         isPerfix = re.fullmatch(pattern, shuffleQuestions[i])
@@ -230,12 +228,10 @@ def mixfiles():
             while i < len(shuffleQuestions) and not re.fullmatch(pattern, shuffleQuestions[i]):
                 if i == 40:
                     pass
-                print("trying execute")
                 editPng.rewriteAnswer(shuffleQuestions[i], counterA,
                                       editPng.rightmost_non_white_black_pixel(shuffleQuestions[i]))
                 counterA += 1
                 i += 1
     i += 1
 
-    print("after all")
     return shuffleQuestions

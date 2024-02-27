@@ -11,7 +11,6 @@ pageCode = True
 detailsBetweenQ = False
 
 
-# input_directory = "C:\\Users\\izeik\\Pictures\\אוטומטים לא מעורבל\\"
 # output_directory = "blender\\images\\"
 
 

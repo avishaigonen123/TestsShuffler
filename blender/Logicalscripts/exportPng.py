@@ -66,6 +66,8 @@ def export_questions(array_path, output_directory):
 
 
 def export_answers(path_root, answers_id, output_directory):
+    print(path_root)
+    print(answers_id)
     image = cv2.imread(path_root)
     first_words = logicalList.find_first_words(path_root, answers_id, False)
     half_path = path_root[path_root.rfind("/") + 1:]
