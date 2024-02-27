@@ -30,10 +30,10 @@ def createAnswersPage(path_answers):
 
             blank = Image.new("RGBA", (PAGE_WIDTH, 70), (255, 255, 255, 255))
 
-            text = "Question {} : Answer {}".format(num_q
-                                   , num_answer)
-            font = ImageFont.truetype('arial.ttf', 40)
+            text = f"Question {num_q} : Answer {num_answer}"
             print("before")
+
+            font = ImageFont.truetype('arial.ttf', 40)
 
             draw = ImageDraw.Draw(blank)
             print("before")
