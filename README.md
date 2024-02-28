@@ -1,39 +1,42 @@
-# Mixwer
-Belender answers of tests in JCT
+TestsShuffler
+Description
+TestsShuffler is a project designed to shuffle and process answers for tests using Blender, Tesseract OCR, and Poppler.
 
-first, clone the project
-**git clone https://github.com/avishaigonen123/TestsShuffler**
+Setup Instructions
+Clone the Project
+bash
+Copy code
+git clone https://github.com/avishaigonen123/TestsShuffler
+cd TestsShuffler
+Install Dependencies
+Activate the setup.py file to install all necessary Python packages:
 
-after clonning, navigate to project dir
-**cd /path/to/TestsShuffler**
-
-then, activate the setup.py file, install all the neccesary packages
-**pip install .**
-
-
-Now you need to install Tesseract:
-https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-5.3.3.20231005.exe
-go with the installer and remember where you installed the project, the defualt is:
-C:\Program Files\Tesseract-OCR\
-
-after installing, you need to enter C:\Program Files\Tesseract-OCR\tessdata
-remove the heb.traineddata that is found there, and copy the heb.traineddata i gave you in the project, to be there.
-
-Then, enter blender/paths and update the paths accoridingly. (if u hit the default, u won't need to change)
-
-next, you need to download poppler from this link:
-https://github.com/oschwartz10612/poppler-windows/releases/download/v23.11.0-0/Release-23.11.0-0.zip
-
-unzip it, and remember where it's located.
-u need to modify the path file, to be something like this:
+bash
+Copy code
+pip install .
+Installing Tesseract
+Download Tesseract OCR from here.
+Install Tesseract OCR and remember the installation directory (default: C:\Program Files\Tesseract-OCR\).
+Replace the Hebrew trained data:
+Remove heb.traineddata from C:\Program Files\Tesseract-OCR\tessdata\.
+Copy the provided heb.traineddata to the same directory.
+Configuring Blender Paths
+Navigate to blender/paths directory in the project.
+Update Blender paths in the path file if necessary. (Default paths might suffice)
+Installing Poppler
+Download Poppler from here.
+Extract the zip file and remember the location.
+Update the path file to point to the Poppler binary location:
+python
+Copy code
 poppler_path=r"C:\Program Files (x86)\poppler-23.11.0\Library\bin"
+Running the Server
+Launch the server:
 
-now, after your path file is looks something like this:
-poppler_path=r"C:\Program Files (x86)\poppler-23.11.0\Library\bin"
+bash
+Copy code
+python server/server.py
+Make sure to follow each step carefully to ensure that the project is set up correctly.
 
-tesseract_path=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
-tessdata_path=r'C:\Program Files\Tesseract-OCR\tessdata'
-
-lastly, run the server
-**python server/server.py**
+License
+This project is licensed under the MIT License.
