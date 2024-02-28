@@ -4,9 +4,10 @@ import numpy as np
 import pytesseract
 import cv2
 
+from blender.paths import tesseract_path
 from blender.FunctionalScripts import editPng, functionalFiles
 
-pytesseract.pytesseract.tesseract_cmd=r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd=tesseract_path
 
 ouput_directory = "blender\\Local storage of images\\"
 
