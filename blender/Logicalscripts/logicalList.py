@@ -4,7 +4,7 @@ import numpy as np
 import pytesseract
 import cv2
 
-from blender.paths import tesseract_path
+from blender.paths import tesseract_path, tessdata_path
 from blender.FunctionalScripts import editPng, functionalFiles
 
 pytesseract.pytesseract.tesseract_cmd=tesseract_path
@@ -78,7 +78,7 @@ def last_occurrence(word, array):
 
 def find_first_words(path, answersId=[], fromQ = True, disable_consecutive_q = False):
     image = cv2.imread(path)
-    boxes = pytesseract.image_to_data(image, lang='heb', config='--oem 2 --psm 6',
+    boxes = pytesseract.image_to_data(image, lang='heb', config='--oem 2 --psm 6 '+ tessdata_path,
                                       output_type=pytesseract.Output.DICT)
     # Filter only the first word in line
     first_words_boxes = {'text': [], 'left': [], 'top': [], 'width': [], 'height': []}
