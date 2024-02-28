@@ -11,7 +11,7 @@ then, activate the setup.py file
 **pip install .**
 
 download this poppler:
-https://poppler.freedesktop.org/poppler-23.12.0.tar.xz
+https://github.com/oschwartz10612/poppler-windows/releases/download/v23.11.0-0/Release-23.11.0-0.zip
 
 lastly, run the server
 **python server/server.py**
