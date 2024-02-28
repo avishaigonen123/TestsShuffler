@@ -10,5 +10,8 @@ after clonning, navigate to project dir
 then, activate the setup.py file
 **pip install .**
 
+download this poppler:
+https://poppler.freedesktop.org/poppler-23.12.0.tar.xz
+
 lastly, run the server
 **python server/server.py**
