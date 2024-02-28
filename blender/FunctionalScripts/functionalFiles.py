@@ -3,7 +3,7 @@ from pdf2image import convert_from_path
 import os
 from PyPDF4 import PdfFileMerger
 
-from TestsShuffler.blender.paths import poppler_path
+from blender.paths import poppler_path
 
 import zipfile
 
