@@ -1,38 +1,42 @@
-# TestsShuffler
+# Mixwer Belender answers of tests in JCT
 
 ## Introduction
-TestsShuffler is a Python project designed to shuffle and process answers for tests using Blender, Tesseract OCR, and Poppler.
+This project provides Blender answers for tests in JCT.
 
 ## Setup Instructions
-### Clone the Project:
-git clone https://github.com/avishaigonen123/TestsShuffler
-cd TestsShuffler
 
-### Install Dependencies:
-Activate the setup.py file to install all necessary Python packages:
+1. **Clone the project:**
+git clone https://github.com/avishaigonen123/TestsShuffler
+
+
+2. **Navigate to the project directory:**
+cd /path/to/TestsShuffler
+
+
+3. **Install dependencies:**
+Activate the setup.py file and install all the necessary packages:
 pip install .
 
-### Installing Tesseract:
-1. Download and install Tesseract OCR from here.
-2. Replace the Hebrew trained data:
-    - Remove heb.traineddata from C:\Program Files\Tesseract-OCR\tessdata\.
-    - Copy the provided heb.traineddata to the same directory.
 
-### Configuring Blender Paths:
-1. Navigate to blender/paths directory in the project.
-2. Update Blender paths in the path file if necessary. (Default paths might suffice)
+4. **Install Tesseract OCR:**
+- Download and install Tesseract OCR from [here](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-5.3.3.20231005.exe).
+- After installation, navigate to `C:\Program Files\Tesseract-OCR\tessdata`.
+- Remove the `heb.traineddata` file and replace it with the provided `heb.traineddata` file from the project.
 
-### Installing Poppler:
-1. Download Poppler from here.
-2. Extract the zip file and remember the location.
-3. Update the path file to point to the Poppler binary location:
-    poppler_path=r"C:\Program Files (x86)\poppler-23.11.0\Library\bin"
+5. **Configure Blender Paths:**
+- Navigate to `blender/paths` directory in the project.
+- Update Blender paths in the `path` file if necessary. Default paths might suffice.
 
-## Running the Server
-Launch the server:
+6. **Install Poppler:**
+- Download Poppler from [here](https://github.com/oschwartz10612/poppler-windows/releases/download/v23.11.0-0/Release-23.11.0-0.zip).
+- Extract the zip file to a location you can remember.
+- Update the `path` file to include the location of Poppler:
+  ```python
+  poppler_path=r"C:\Program Files (x86)\poppler-23.11.0\Library\bin"
+  ```
+
+7. **Run the server:**
 python server/server.py
 
-Ensure you follow each step carefully to set up the project correctly.
 
-## License
-This project is licensed under the MIT License.
+Ensure you follow each step carefully to set up the project correctly.
