@@ -1,7 +1,8 @@
 import sys
+import os
 
 # adding TestsShuffler to the system path
-# sys.path.insert(0, r'C:\Users\avish\git\TestsShuffler')  # here you should change to project dir
+sys.path.append(os.path.dirname(os.getcwd())) 
 
 import zipfile
 

@@ -6,6 +6,7 @@ from PyPDF4 import PdfFileMerger
 import zipfile
 
 from blender.FunctionalScripts import editPng
+from blender.paths import poppler_path
 
 output_directory = "blender/images/"
 
@@ -40,7 +41,7 @@ def png_to_pdf(sourcePath):
 
 #Conver .pdf to .png and crop the begin and the end of the page
 def pdf_to_png(pathSource, pathDest):
-    pages = convert_from_path(pathSource)
+    pages = convert_from_path(pathSource, poppler_path=poppler_path)
     paths = []
     for i, page in enumerate(pages):
         (width, height) = page.size
