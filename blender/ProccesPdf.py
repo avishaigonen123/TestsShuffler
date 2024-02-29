@@ -11,7 +11,25 @@ pageCode = True
 detailsBetweenQ = False
 
 
-# output_directory = "blender\\images\\"
+import os
+
+def clear_png_files(directory):
+    # Check if the directory exists
+    if os.path.exists(directory):
+        # Iterate over all files in the directory
+        for item in os.listdir(directory):
+            item_path = os.path.join(directory, item)
+            # Check if it's a file and if it has a PNG extension
+            if os.path.isfile(item_path) and item.lower().endswith('.png'):
+                os.remove(item_path)
+                print(f"Deleted '{item}'.")
+    else:
+        print(f"Directory '{directory}' does not exist.")
+
+# Specify the directory containing the PNG files
+directory_to_clear = "images"
+clear_png_files(directory_to_clear)
+
 
 
 def blend_pdf(path_original_pdf: str) -> str:

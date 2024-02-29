@@ -31,11 +31,14 @@ def createAnswersPage(path_answers):
             blank = Image.new("RGBA", (PAGE_WIDTH, 70), (255, 255, 255, 255))
 
             text = f"Question {num_q} : Answer {num_answer}"
+            print("before")
 
             font = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', 40)
 
             draw = ImageDraw.Draw(blank)
+            print("before")
             text_width, text_height = textsize(text, font=font)
+            print("after")
             text_x = (PAGE_WIDTH - text_width) / 2
             text_y = (70 - text_height) / 2
 
@@ -148,4 +151,4 @@ def combineFilestoPages(array_path, output_dir,prefixFile = "final_page"):
         result.save(output_path_current)
         total_page_path.append(output_path_current)
         page_num += 1
-    return total_page_path
+    return total_page_path 
