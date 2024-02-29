@@ -151,4 +151,4 @@ def combineFilestoPages(array_path, output_dir,prefixFile = "final_page"):
         result.save(output_path_current)
         total_page_path.append(output_path_current)
         page_num += 1
-    return total_page_path 
+    return total_page_path                

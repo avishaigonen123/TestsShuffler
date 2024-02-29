@@ -36,3 +36,4 @@ def wordToBox(text, first_word_boxes, answersId, num=1, answer=False):
     else:
         start_index = logicalList.find_index_answer(words)
     return 0, y[start_index], l[start_index], y[start_index] + h[start_index]
+                    

@@ -104,4 +104,4 @@ def export_answers(pathRoot, answersId, ouput_directory):
                 cv2.imwrite(pathC, image[0:30, 0:image.shape[1]])
                 print(fr"ERROR question - {numQ} answer - {answersId.index(charAns)}")
     except:
-        print(fr"ERROR question - {numQ} - fill with white")
+        print(fr"ERROR question - {numQ} - fill with white")  

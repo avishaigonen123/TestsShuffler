@@ -27,7 +27,7 @@ def clear_png_files(directory):
         print(f"Directory '{directory}' does not exist.")
 
 # Specify the directory containing the PNG files
-directory_to_clear = "images"
+directory_to_clear = "blender/images/"
 clear_png_files(directory_to_clear)
 
 
