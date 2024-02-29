@@ -15,5 +15,4 @@ build/
 dist/
 TestsShuffler.egg-info/
 .venv
-*.png
 __pycache__
