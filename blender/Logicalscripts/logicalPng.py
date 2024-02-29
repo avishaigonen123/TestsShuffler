@@ -11,8 +11,6 @@ def textsize(text, font):
     return width, height
 
 def createAnswersPage(path_answers):
-    print(path_answers)
-
     PAGE_HEIGHT = 1805
     PAGE_WIDTH = 1700
     image_array = []

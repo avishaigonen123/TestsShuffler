@@ -22,7 +22,6 @@ def clear_png_files(directory):
             # Check if it's a file and if it has a PNG extension
             if os.path.isfile(item_path) and item.lower().endswith('.png'):
                 os.remove(item_path)
-                print(f"Deleted '{item}'.")
     else:
         print(f"Directory '{directory}' does not exist.")
 
