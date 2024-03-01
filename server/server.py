@@ -6,14 +6,13 @@ sys.path.append(os.path.dirname(os.getcwd()))
 
 import zipfile
 
-from flask import Flask, request, jsonify, send_file, render_template
 import os
 from zipfile import ZipFile
 
 from blender.ProccesPdf import process_pdfs
+from flask import Flask, request, jsonify, send_file, render_template
 
 app = Flask(__name__)
-
 
 def change_to_project_dir():
     # make sure i'm in the right directory.

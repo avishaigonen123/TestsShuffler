@@ -30,7 +30,7 @@ def createAnswersPage(path_answers):
 
             text = f"Question {num_q} : Answer {num_answer}"
 
-            font = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', 40)
+            font = ImageFont.truetype('/root/fonts/LiberationSans-Regular.ttf', 40)
 
             draw = ImageDraw.Draw(blank)
             text_width, text_height = textsize(text, font=font)
