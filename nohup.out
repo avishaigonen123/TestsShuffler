@@ -2608,3 +2608,28 @@ Port 5000 is in use by another program. Either identify and stop that program, o
 213.151.55.26 - - [01/Mar/2024 10:09:19] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
 213.151.55.26 - - [01/Mar/2024 10:09:19] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
 213.151.55.26 - - [01/Mar/2024 10:09:19] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://191.96.1.241:5000
+[33mPress CTRL+C to quit[0m
+213.151.55.26 - - [01/Mar/2024 10:48:20] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [01/Mar/2024 10:48:20] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:48:20] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:48:20] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:48:20] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://191.96.1.241:5000
+[33mPress CTRL+C to quit[0m
+5.29.103.250 - - [01/Mar/2024 10:51:55] "GET / HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 10:51:55] "GET /static/loader.css HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 10:51:55] "GET /static/text.css HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 10:51:55] "GET /static/script.js HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 10:51:55] "GET /static/buttons.css HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 10:51:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
