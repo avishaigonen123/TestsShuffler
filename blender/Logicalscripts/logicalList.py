@@ -197,6 +197,9 @@ def mixfiles():
     shuffleQuestions = []
     q = 0
     while f"question_{q+1}.png" in file_list:
+        if f"question_{q+1}_prefix.png" not in file_list:
+            q+=1
+            continue
         shuffleQuestions.append(directory_path + f"question_{q+1}_prefix.png")
         a = 0
         while f"question_{q + 1}_answer_{a + 1}.png" in file_list:
