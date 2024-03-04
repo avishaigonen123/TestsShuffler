@@ -72,7 +72,7 @@ def blend_pdf(path_original_pdf: str) -> str:
     print("Success convert pages to.pdf\n")
 
     output_pdf_path = os.path.join("blender", "final_pdfs",
-                                   path_original_pdf[path_original_pdf.rfind("/") + 1:-4] + "scramble")
+                                   path_original_pdf[path_original_pdf.rfind("/") + 1:-4]+" מעורבל")
     functionalFiles.merge_pdf(paths_of_pages_pdf,
                               output_pdf_path)
     print("Success merge pages\n")
@@ -96,7 +96,7 @@ def process_pdfs(array_paths):
         global path_original_pdf
         path_original_pdf = pdf_file_path
         file_name = os.path.basename(path_original_pdf)
-        fileNameEnd = path_original_pdf[path_original_pdf.rfind("/") + 1:-4] + "scramble" + path_original_pdf[-4:]
+        fileNameEnd = path_original_pdf[path_original_pdf.rfind("/") + 1:-4]+" מעורבל" + path_original_pdf[-4:]
         try:
             # zip all the successPdf
             successPdf.append(blend_pdf(path_original_pdf=path_original_pdf) + ".pdf")

@@ -16,3 +16,6 @@ dist/
 TestsShuffler.egg-info/
 .venv
 __pycache__
+
+# ignore nohup.out
+nohup.out 
