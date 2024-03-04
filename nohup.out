@@ -2633,3 +2633,198 @@ Port 5000 is in use by another program. Either identify and stop that program, o
 5.29.103.250 - - [01/Mar/2024 10:51:55] "GET /static/script.js HTTP/1.1" 200 -
 5.29.103.250 - - [01/Mar/2024 10:51:55] "GET /static/buttons.css HTTP/1.1" 200 -
 5.29.103.250 - - [01/Mar/2024 10:51:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://191.96.1.241:5000
+[33mPress CTRL+C to quit[0m
+213.151.55.26 - - [01/Mar/2024 10:57:50] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:51] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:52] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [01/Mar/2024 10:57:52] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:52] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:52] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:52] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:53] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [01/Mar/2024 10:57:53] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:53] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:53] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:57:53] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:58:01] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [01/Mar/2024 10:58:01] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:58:01] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:58:01] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:58:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:58:03] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+213.151.55.26 - - [01/Mar/2024 10:58:28] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [01/Mar/2024 10:58:28] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:58:28] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:58:28] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:58:28] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [01/Mar/2024 10:59:17] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+5.29.103.250 - - [01/Mar/2024 11:02:47] "[33mGET /home HTTP/1.1[0m" 404 -
+5.29.103.250 - - [01/Mar/2024 12:21:50] "GET / HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 12:21:50] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:21:50] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:21:50] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:21:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:22:09] "GET / HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 12:22:09] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:22:09] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:22:09] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:22:09] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:22:35] "GET / HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 12:22:35] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:22:35] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:22:35] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:22:35] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+5.29.103.250 - - [01/Mar/2024 12:24:51] "POST / HTTP/1.1" 200 -
+5.29.103.250 - - [01/Mar/2024 12:24:56] "POST /download-zip HTTP/1.1" 200 -
+188.64.206.62 - - [01/Mar/2024 15:26:28] "GET / HTTP/1.1" 200 -
+188.64.206.62 - - [01/Mar/2024 15:26:28] "GET /static/loader.css HTTP/1.1" 200 -
+188.64.206.62 - - [01/Mar/2024 15:26:29] "GET /static/buttons.css HTTP/1.1" 200 -
+188.64.206.62 - - [01/Mar/2024 15:26:29] "GET /static/script.js HTTP/1.1" 200 -
+188.64.206.62 - - [01/Mar/2024 15:26:29] "GET /static/text.css HTTP/1.1" 200 -
+188.64.206.62 - - [01/Mar/2024 15:26:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+167.248.133.182 - - [02/Mar/2024 16:12:44] "GET / HTTP/1.1" 200 -
+167.248.133.182 - - [02/Mar/2024 16:12:44] code 505, message Invalid HTTP version (2.0)
+167.248.133.182 - - [02/Mar/2024 16:12:44] "[35m[1mPRI * HTTP/2.0[0m" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+167.248.133.182 - - [02/Mar/2024 16:12:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+213.151.55.26 - - [02/Mar/2024 21:42:48] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [02/Mar/2024 21:42:48] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [02/Mar/2024 21:42:48] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [02/Mar/2024 21:42:48] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [02/Mar/2024 21:42:49] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [02/Mar/2024 21:42:58] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+167.94.138.33 - - [03/Mar/2024 00:03:55] code 400, message Bad request version ('À\x14À')
+167.94.138.33 - - [03/Mar/2024 00:03:55] "[35m[1m\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03þO´\x83\x1c\x0eõGpÊËòð>O\x83Ñk\x00ôr£ß_Å\x1cg1»\x09J  \x11auîI\x85R_ò~\x19\x09\x8a\x1fö¸\x03zyª¾\x88_¡}ÌU\x9a\x0dLø0\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À[0m" HTTPStatus.BAD_REQUEST -
+167.94.138.33 - - [03/Mar/2024 00:03:58] "GET / HTTP/1.1" 200 -
+167.94.138.33 - - [03/Mar/2024 00:04:02] "GET / HTTP/1.1" 200 -
+167.94.138.33 - - [03/Mar/2024 00:04:02] code 505, message Invalid HTTP version (2.0)
+167.94.138.33 - - [03/Mar/2024 00:04:02] "[35m[1mPRI * HTTP/2.0[0m" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+167.94.138.33 - - [03/Mar/2024 00:04:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+213.151.55.26 - - [03/Mar/2024 08:51:47] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 08:51:47] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 08:51:47] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 08:51:47] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 08:51:47] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 08:54:00] "POST / HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 08:55:32] "POST /download-zip HTTP/1.1" 200 -
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://191.96.1.241:5000
+[33mPress CTRL+C to quit[0m
+213.151.55.26 - - [03/Mar/2024 09:00:58] "POST / HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 09:01:27] "POST /download-zip HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 09:01:31] "POST /download-zip HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 09:01:40] "POST /download-zip HTTP/1.1" 200 -
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://191.96.1.241:5000
+[33mPress CTRL+C to quit[0m
+213.151.55.26 - - [03/Mar/2024 09:06:00] "POST / HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 09:06:50] "POST /download-zip HTTP/1.1" 200 -
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://191.96.1.241:5000
+[33mPress CTRL+C to quit[0m
+213.151.55.26 - - [03/Mar/2024 09:10:37] "POST / HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 09:12:57] "POST /download-zip HTTP/1.1" 200 -
+93.172.123.44 - - [03/Mar/2024 10:11:16] "GET / HTTP/1.1" 200 -
+93.172.123.44 - - [03/Mar/2024 10:11:16] "GET /static/loader.css HTTP/1.1" 200 -
+93.172.123.44 - - [03/Mar/2024 10:11:16] "GET /static/buttons.css HTTP/1.1" 200 -
+93.172.123.44 - - [03/Mar/2024 10:11:16] "GET /static/text.css HTTP/1.1" 200 -
+93.172.123.44 - - [03/Mar/2024 10:11:16] "GET /static/script.js HTTP/1.1" 200 -
+107.170.240.30 - - [03/Mar/2024 10:36:14] "GET / HTTP/1.1" 200 -
+192.241.218.21 - - [03/Mar/2024 13:15:00] "GET / HTTP/1.1" 200 -
+95.214.52.232 - - [03/Mar/2024 13:32:04] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00')
+95.214.52.232 - - [03/Mar/2024 13:32:04] "[35m[1m\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00[0m" HTTPStatus.BAD_REQUEST -
+176.12.190.124 - - [03/Mar/2024 16:55:16] "GET / HTTP/1.1" 200 -
+176.12.190.124 - - [03/Mar/2024 16:55:17] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+176.12.190.124 - - [03/Mar/2024 16:55:17] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+176.12.190.124 - - [03/Mar/2024 16:55:17] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+176.12.190.124 - - [03/Mar/2024 16:55:17] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+176.12.190.124 - - [03/Mar/2024 16:57:58] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+213.151.55.26 - - [03/Mar/2024 16:58:28] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+213.151.55.26 - - [03/Mar/2024 17:03:45] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 17:03:45] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 17:03:45] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 17:03:45] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 17:03:45] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 17:05:20] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+213.151.55.26 - - [03/Mar/2024 17:05:32] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+213.151.55.26 - - [03/Mar/2024 17:09:28] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+147.235.202.250 - - [03/Mar/2024 17:57:49] "GET / HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 17:57:49] "GET /static/loader.css HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 17:57:49] "GET /static/buttons.css HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 17:57:49] "GET /static/text.css HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 17:57:49] "GET /static/script.js HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 17:57:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+147.235.202.250 - - [03/Mar/2024 18:00:43] "POST / HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 18:00:49] "POST /download-zip HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 18:01:05] "POST /download-zip HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 18:01:21] "POST /download-zip HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 18:01:31] "POST /download-zip HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 18:01:34] "POST /download-zip HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 20:50:05] "GET / HTTP/1.1" 200 -
+147.235.202.250 - - [03/Mar/2024 20:50:06] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+147.235.202.250 - - [03/Mar/2024 20:50:06] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+147.235.202.250 - - [03/Mar/2024 20:50:06] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+147.235.202.250 - - [03/Mar/2024 20:50:06] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+147.235.202.250 - - [03/Mar/2024 20:50:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+213.151.55.26 - - [03/Mar/2024 22:16:56] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [03/Mar/2024 22:16:57] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 22:16:57] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 22:16:57] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 22:16:57] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+213.151.55.26 - - [03/Mar/2024 22:19:33] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+162.142.125.224 - - [04/Mar/2024 03:41:10] code 400, message Bad request syntax ('\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03c$6Þc>m"§mWu\x9aÑoæz?)Pi\x81')
+162.142.125.224 - - [04/Mar/2024 03:41:10] "[35m[1m\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03c$6Þc>m"§mWu\x9aÑoæz?)Pi\x81[0m" HTTPStatus.BAD_REQUEST -
+162.142.125.224 - - [04/Mar/2024 03:41:15] "GET / HTTP/1.1" 200 -
+162.142.125.224 - - [04/Mar/2024 03:41:20] "GET / HTTP/1.1" 200 -
+162.142.125.224 - - [04/Mar/2024 03:41:20] code 505, message Invalid HTTP version (2.0)
+162.142.125.224 - - [04/Mar/2024 03:41:20] "[35m[1mPRI * HTTP/2.0[0m" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+162.142.125.224 - - [04/Mar/2024 03:41:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+185.224.128.251 - - [04/Mar/2024 04:11:35] "GET / HTTP/1.0" 200 -
+147.235.202.250 - - [04/Mar/2024 11:30:14] "GET / HTTP/1.1" 200 -
+147.235.202.250 - - [04/Mar/2024 11:30:14] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+147.235.202.250 - - [04/Mar/2024 11:30:14] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+147.235.202.250 - - [04/Mar/2024 11:30:14] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+147.235.202.250 - - [04/Mar/2024 11:30:14] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+147.235.202.250 - - [04/Mar/2024 11:30:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+213.151.55.26 - - [04/Mar/2024 13:52:35] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [04/Mar/2024 13:52:37] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [04/Mar/2024 13:52:37] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [04/Mar/2024 13:52:44] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://191.96.1.241:5000
+[33mPress CTRL+C to quit[0m
+213.151.55.26 - - [04/Mar/2024 15:30:07] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [04/Mar/2024 15:30:10] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [04/Mar/2024 15:31:01] "GET / HTTP/1.1" 200 -
+213.151.55.26 - - [04/Mar/2024 15:31:01] "[36mGET /static/loader.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [04/Mar/2024 15:31:03] "[36mGET /static/buttons.css HTTP/1.1[0m" 304 -
+213.151.55.26 - - [04/Mar/2024 15:31:04] "[36mGET /static/text.css HTTP/1.1[0m" 304 -
